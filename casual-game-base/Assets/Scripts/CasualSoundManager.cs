@@ -17,6 +17,7 @@ public class CasualSoundManager : MonoBehaviour {
 	
 	public enum SFX { JUMP, RUN, SUCCESS };
 	public enum MUSIC { BACKGROUND, GAME_OVER };
+	private AudioSource currentSong;
 
 	/**
 	 * Fancy way to call CasualSoundManager.musicPlayer
@@ -112,7 +113,13 @@ public class CasualSoundManager : MonoBehaviour {
 		if(audio != null){
 			audio.loop = loop;
 			if(play){
+				//Can only have 1 song at the time.
+				if(currentSong != null){
+					currentSong.Stop();
+				}
+
 				audio.Play ();
+				currentSong = audio;
 			} else {
 				audio.Stop();
 			}

@@ -18,6 +18,9 @@ public class CasualLoadManager : MonoBehaviour {
 	 * Yes, this sux.
 	 **/
 	void Awake(){
+		CasualBase.CasualSocialManager mgr = CasualBase.CasualSocialManager.getInstance ();
+		mgr.ShareToTwitter ("Hello World");
+
 		GameObject currentGameObject = transform.gameObject;
 		if (CasualLoadManager.self != null) {
 			//Already have one? Destroy this (loaded from a different scene)

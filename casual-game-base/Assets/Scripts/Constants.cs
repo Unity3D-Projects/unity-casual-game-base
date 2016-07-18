@@ -39,5 +39,29 @@ public class Constants
 			public static string BALL = "ball";
 		}
 	}
+
+	public static class FILES {
+		public static string SUFFIX = ".casual";
+		public static string PREFIX = "_";
+
+		public static string SCREENSHOT = "__screenshot__.png";
+		public static string RECORDS = Constants.FILES.PREFIX + "records" + Constants.FILES.SUFFIX;
+	}
+	public static class URL {
+		public static string SHARE = "https://play.google.com/store/apps/details?id=com.fifino.flappydroid";
+	}
+	public enum Environment { WINDOWS, WEB, IOS, ANDROID, OTHER };
+
+#if UNITY_IOS
+	public static Environment CURRENT_ENVIRONMENT = Environment.IOS;
+#elif UNITY_ANDROID
+	public static Environment CURRENT_ENVIRONMENT = Environment.ANDROID;
+#elif UNITY_WINDOWS
+	public static Environment CURRENT_ENVIRONMENT = Environment.WINDOWS;
+#elif UNITY_WEBGL
+	public static Environment CURRENT_ENVIRONMENT = Environment.WEB;
+#else
+	public static Environment CURRENT_ENVIRONMENT = Environment.OTHER;
+#endif
 }
 

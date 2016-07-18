@@ -29,3 +29,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Temp
+
+#Misc
+.DS_Store
+*.local
+*.casual
