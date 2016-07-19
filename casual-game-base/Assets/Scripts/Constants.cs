@@ -47,8 +47,14 @@ public class Constants
 		public static string SCREENSHOT = "__screenshot__.png";
 		public static string RECORDS = Constants.FILES.PREFIX + "records" + Constants.FILES.SUFFIX;
 	}
-	public static class URL {
-		public static string SHARE = "https://play.google.com/store/apps/details?id=com.fifino.flappydroid";
+	public static class SOCIAL {
+//		public static string SHARE = "https://play.google.com/store/apps/details?id=com.fifino.flappydroid";
+		public static string SHARE = "https://play.google.com/store/apps/developer?id=porfiriopartida";
+		public static class TWITTER {
+			public static string URL = "http://twitter.com/intent/tweet?";
+			public static string LANG = "en";
+			public static string TEXT = "text=";
+		}
 	}
 	public enum Environment { WINDOWS, WEB, IOS, ANDROID, OTHER };
 
