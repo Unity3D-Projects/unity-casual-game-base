@@ -64,9 +64,10 @@ public class Constants
 
 			public static string Q_LINK = "&link=";
 			public static string DISPLAY = "&display=page";
-			public static string Q_CAPTION = "&caption=Gotta%20Catch%20Em%20All";
-			public static string Q_NAME = "&name=pokego";
-			public static string Q_DESCRIPCION = "&description=ezpz";
+			public static string Q_CAPTION = "&caption=";
+			public static string CAPTION = "INFORMALPENGUINS";
+			public static string Q_NAME = "&name=";
+			public static string Q_DESCRIPCION = "&description=";
 		}
 	}
 	public enum Environment { WINDOWS, WEB, IOS, ANDROID, OTHER };
