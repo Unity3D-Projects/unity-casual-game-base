@@ -45,9 +45,9 @@ namespace CasualBase
 				Constants.SOCIAL.FACEBOOK.Q_APP_ID +
 				Constants.SOCIAL.FACEBOOK.Q_LINK + Constants.SOCIAL.SHARE +
 				Constants.SOCIAL.FACEBOOK.DISPLAY +
-				Constants.SOCIAL.FACEBOOK.Q_CAPTION +
-				Constants.SOCIAL.FACEBOOK.Q_NAME + 
-				Constants.SOCIAL.FACEBOOK.Q_DESCRIPCION 
+				Constants.SOCIAL.FACEBOOK.Q_CAPTION + Constants.SOCIAL.FACEBOOK.CAPTION +
+				Constants.SOCIAL.FACEBOOK.Q_NAME + name + 
+				Constants.SOCIAL.FACEBOOK.Q_DESCRIPCION + description
 
 			);
             //https://www.facebook.com/dialog/feed?%20app_id=231019603765682&%20link=http://google.com
