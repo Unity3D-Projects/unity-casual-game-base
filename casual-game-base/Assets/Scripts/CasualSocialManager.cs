@@ -20,7 +20,7 @@ namespace CasualBase
             Application.CaptureScreenshot(Constants.FILES.SCREENSHOT);
         }
         public void GetPhoto()
-        {    
+        {
             RawImage image;
             string url = Application.persistentDataPath + "/" + Constants.FILES.SCREENSHOT;
             byte[] bytes = File.ReadAllBytes( url );
@@ -31,30 +31,27 @@ namespace CasualBase
         
         public void shareScreenshot(){
             TakeScreenshot ();
-            string url = Constants.URL.SHARE;
         }
-        
-        private const string TWITTER_ADDRESS = "http://twitter.com/intent/tweet";
-        private const string TWEET_LANGUAGE = "en"; 
         
         public void ShareToTwitter (string textToDisplay)
         {
-            Application.OpenURL(TWITTER_ADDRESS +
-                                "?text=" + WWW.EscapeURL(textToDisplay) +
-                                "&amp;lang=" + WWW.EscapeURL(TWEET_LANGUAGE));
+			Application.OpenURL(Constants.SOCIAL.TWITTER.URL +
+								Constants.SOCIAL.TWITTER.Q_TEXT + WWW.EscapeURL(textToDisplay) +
+								Constants.SOCIAL.TWITTER.Q_LANG + WWW.EscapeURL(Constants.SOCIAL.TWITTER.LANG));
         }
-        public void ShareToFacebook(){
-            //https://www.facebook.com/dialog/feed?%20app_id=231019603765682&%20link=http://google.com&display=page&caption=Gotta%20Catch%20Em%20All&name=pokego&description=ezpz
+		public void ShareToFacebook(){
+			Application.OpenURL(
+				Constants.SOCIAL.FACEBOOK.URL + Constants.SOCIAL.FACEBOOK.APP_ID +
+				Constants.SOCIAL.FACEBOOK.Q_APP_ID +
+				Constants.SOCIAL.FACEBOOK.Q_LINK + Constants.SOCIAL.SHARE +
+				Constants.SOCIAL.FACEBOOK.DISPLAY +
+				Constants.SOCIAL.FACEBOOK.Q_CAPTION + Constants.SOCIAL.FACEBOOK.CAPTION +
+				Constants.SOCIAL.FACEBOOK.Q_NAME + name + 
+				Constants.SOCIAL.FACEBOOK.Q_DESCRIPCION + description
+
+			);
             //https://www.facebook.com/dialog/feed?%20app_id=231019603765682&%20link=http://google.com
         }
         
-        //                https://developers.facebook.com/docs/unity/reference/current/FB.ShareLink
-        //                        public static void ShareLink(
-        //                                Uri contentURL = null,
-        //                                string contentTitle = "",
-        //                                string contentDescription = "",
-        //                                Uri photoURL = null,
-        //                                FacebookDelegate<IShareResult> callback = null
-        //                        )
     }
 }

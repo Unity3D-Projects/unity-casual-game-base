@@ -53,7 +53,21 @@ public class Constants
 		public static class TWITTER {
 			public static string URL = "http://twitter.com/intent/tweet?";
 			public static string LANG = "en";
-			public static string TEXT = "text=";
+			public static string Q_TEXT = "text=";
+			public static string Q_LANG = "&amp;lang=";
+		}
+
+		public static class FACEBOOK {
+			public static string URL = "https://www.facebook.com/dialog/feed?";
+			public static string Q_APP_ID = "app_id=";
+			public static string APP_ID = "231019603765682";
+
+			public static string Q_LINK = "&link=";
+			public static string DISPLAY = "&display=page";
+			public static string Q_CAPTION = "&caption=";
+			public static string CAPTION = "INFORMALPENGUINS";
+			public static string Q_NAME = "&name=";
+			public static string Q_DESCRIPCION = "&description=";
 		}
 	}
 	public enum Environment { WINDOWS, WEB, IOS, ANDROID, OTHER };
