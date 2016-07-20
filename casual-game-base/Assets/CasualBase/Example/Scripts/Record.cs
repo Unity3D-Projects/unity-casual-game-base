@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using CasualBase;
 
-namespace CasualBase
+namespace CasualBaseExample
 {
-	class RecordHelper {
+	public class RecordHelper {
 		System.Random random = new System.Random ();
 
 		public Record getRandomRecord(){
@@ -16,7 +17,7 @@ namespace CasualBase
 	}
 
 	[System.Serializable]
-	class Record : System.Object
+	public class Record : System.Object
 	{
 		public DateTime Timestamp { get; set; }
 		public double Value { get; set; }
@@ -25,9 +26,9 @@ namespace CasualBase
 			return "Timestamp[ " +Timestamp+ " ], Value[ "+ Value +" ]";
 		}
 	}
-	
+
 	[System.Serializable]
-	class RecordList : System.Object
+	public class RecordList : System.Object
 	{
 		private Record[] records;
 		public Record highScore { get; set; }
@@ -63,7 +64,7 @@ namespace CasualBase
 			}
 			if (record != null) {
 				recordList.Add (record);
-				
+
 				if(highScore == null || highScore != null && record.Value > highScore.Value) {
 					highScore = record;
 				}
@@ -90,41 +91,41 @@ namespace CasualBase
 		}
 	}
 
-	
-//	class RecordExample {
-//		private void print(object message){
-//			UnityEngine.Debug.Log (message);
-//		}
-//		public void start () {
-//			string filePath = "test-records.casual";
-//			
-//			CasualSerializeManager casualSerializeManager = CasualSerializeManager.getInstance ();
-//			RecordHelper rh = new RecordHelper ();
-//			
-//			RecordList recordList = casualSerializeManager.loadFile<RecordList>(filePath);
-//			//Preloading from file if any.
-//			if (null == recordList) {
-//				recordList = new RecordList ();
-//			}
-//			print ("Preloaded recordList..");
-//			print (recordList);
-//			
-//			//Adding 3 new files.
-//			recordList.add (rh.getRandomRecord());
-//			recordList.add (rh.getRandomRecord());
-//			recordList.add (rh.getRandomRecord());
-//			
-//			print ("Altered recordList..");
-//			
-//			print (recordList);
-//			
-//			casualSerializeManager.saveToFile(filePath, recordList);
-//			
-//			RecordList oRecords = casualSerializeManager.loadFile<RecordList>(filePath);
-//			
-//			print ("Reloading recordList..");
-//			print (oRecords);
-//		}
-//	}
+
+	//	class RecordExample {
+	//		private void print(object message){
+	//			UnityEngine.Debug.Log (message);
+	//		}
+	//		public void start () {
+	//			string filePath = "test-records.casual";
+	//			
+	//			CasualSerializeManager casualSerializeManager = CasualSerializeManager.getInstance ();
+	//			RecordHelper rh = new RecordHelper ();
+	//			
+	//			RecordList recordList = casualSerializeManager.loadFile<RecordList>(filePath);
+	//			//Preloading from file if any.
+	//			if (null == recordList) {
+	//				recordList = new RecordList ();
+	//			}
+	//			print ("Preloaded recordList..");
+	//			print (recordList);
+	//			
+	//			//Adding 3 new files.
+	//			recordList.add (rh.getRandomRecord());
+	//			recordList.add (rh.getRandomRecord());
+	//			recordList.add (rh.getRandomRecord());
+	//			
+	//			print ("Altered recordList..");
+	//			
+	//			print (recordList);
+	//			
+	//			casualSerializeManager.saveToFile(filePath, recordList);
+	//			
+	//			RecordList oRecords = casualSerializeManager.loadFile<RecordList>(filePath);
+	//			
+	//			print ("Reloading recordList..");
+	//			print (oRecords);
+	//		}
+	//	}
 }
 

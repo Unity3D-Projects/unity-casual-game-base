@@ -22,7 +22,6 @@ public class CasualBall : MonoBehaviour {
     }
     void FixedUpdate(){
         float dist = Vector3.Distance(otherTransform.position, transform.position);
-        print (dist);
         if (dist > 13) {
             //Out of screen.
             this.reset ();

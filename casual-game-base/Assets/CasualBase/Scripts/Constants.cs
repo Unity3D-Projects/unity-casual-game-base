@@ -62,7 +62,7 @@ namespace CasualBase
             }
             
             public static class FACEBOOK {
-                public static string URL = "https://www.facebook.com/dialog/feed?";
+                public static string URL = "http://facebook.com/dialog/feed?";
                 
                 public static string Q_APP_ID = "app_id=";
                 public static string APP_ID = "231019603765682";
@@ -81,6 +81,9 @@ namespace CasualBase
                 //this.ShareToFacebook(Constants.SOCIAL.FACEBOOK., Constants.SOCIAL.FACEBOOK.NAME, description, Constants.SOCIAL.FACEBOOK.PICTURE);
             }
         }
+		public static class EXCEPTION_MESSAGE {
+			public static string NO_BASE = "CasualBase Prefab is not present";
+		}
         public enum Environment { WINDOWS, WEB, IOS, ANDROID, OTHER };
         
         #if UNITY_IOS

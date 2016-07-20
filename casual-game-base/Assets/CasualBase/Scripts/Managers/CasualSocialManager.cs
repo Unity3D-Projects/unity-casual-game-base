@@ -21,9 +21,10 @@ namespace CasualBase
         }
         public void ShareToTwitter (string textToDisplay)
         {
-            Application.OpenURL(Constants.SOCIAL.TWITTER.URL +
-                                Constants.SOCIAL.TWITTER.Q_TEXT + WWW.EscapeURL(textToDisplay) +
-                                Constants.SOCIAL.TWITTER.Q_LANG + WWW.EscapeURL(Constants.SOCIAL.TWITTER.LANG));
+			string url = Constants.SOCIAL.TWITTER.URL +
+			             Constants.SOCIAL.TWITTER.Q_TEXT + WWW.EscapeURL (textToDisplay) +
+			             Constants.SOCIAL.TWITTER.Q_LANG + WWW.EscapeURL (Constants.SOCIAL.TWITTER.LANG);
+			Application.OpenURL(url);
         }
         
         public void ShareToFacebook(float score){
@@ -42,19 +43,18 @@ namespace CasualBase
         /**
          * Opens the URL in browser with twitter share dialog
          * */
-        public void ShareToFacebook(string caption, string name, string description, string picture){
-            string url = Constants.SOCIAL.FACEBOOK.URL + Constants.SOCIAL.FACEBOOK.APP_ID +
-                Constants.SOCIAL.FACEBOOK.Q_APP_ID +
-                    Constants.SOCIAL.FACEBOOK.Q_LINK + Constants.SOCIAL.SHARE +
-                    Constants.SOCIAL.FACEBOOK.DISPLAY +
-                    Constants.SOCIAL.FACEBOOK.Q_CAPTION + caption +
-                    Constants.SOCIAL.FACEBOOK.Q_NAME + name + 
-                    Constants.SOCIAL.FACEBOOK.Q_DESCRIPCION + description;
-            if(picture != null){
-                url+=  Constants.SOCIAL.FACEBOOK.Q_PICTURE + picture;
-            }
-            Application.OpenURL(url);
-            //https://www.facebook.com/dialog/feed?%20app_id=231019603765682&%20link=http://google.com
+		public void ShareToFacebook(string caption, string name, string description, string picture){
+			string url = Constants.SOCIAL.FACEBOOK.URL + Constants.SOCIAL.FACEBOOK.Q_APP_ID +
+				Constants.SOCIAL.FACEBOOK.APP_ID +
+				Constants.SOCIAL.FACEBOOK.Q_LINK + WWW.EscapeURL(Constants.SOCIAL.SHARE) +
+				Constants.SOCIAL.FACEBOOK.DISPLAY +
+				Constants.SOCIAL.FACEBOOK.Q_CAPTION + WWW.EscapeURL(caption) +
+				Constants.SOCIAL.FACEBOOK.Q_NAME + WWW.EscapeURL(name) + 
+				Constants.SOCIAL.FACEBOOK.Q_DESCRIPCION + WWW.EscapeURL(description);
+			if(picture != null){
+				url+=  Constants.SOCIAL.FACEBOOK.Q_PICTURE + WWW.EscapeURL(picture);
+			}
+			Application.OpenURL(url);
         }
         
         

@@ -1,27 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &181420
+--- !u!1 &155728
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 477322}
-  - 114: {fileID: 11496668}
+  - 4: {fileID: 402134}
+  - 114: {fileID: 11439140}
   m_Layer: 0
-  m_Name: _CasualBase
+  m_Name: _SoundsBucket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &477322
+--- !u!4 &402134
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181420}
+  m_GameObject: {fileID: 155728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -29,17 +29,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11496668
+--- !u!114 &11439140
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181420}
+  m_GameObject: {fileID: 155728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f808b1f8a26473a851b3dfda04fbd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 37d6bc1cddb37428db77938c03f9c73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_audioSourcePrefab: {fileID: 107500, guid: 914ddc12c97514a65852fd8e8df3af05, type: 2}
+  m_songsList:
+  - {fileID: 8300000, guid: 7b9e1bc0cbd723e4cb05ff4d92d186c8, type: 3}
+  - {fileID: 8300000, guid: f4087b9645f890541a3a48315254bee3, type: 3}
+  m_SFXList:
+  - {fileID: 8300000, guid: f12253b3ae12ff94e87de87d7be43ff2, type: 3}
+  - {fileID: 8300000, guid: f12253b3ae12ff94e87de87d7be43ff2, type: 3}
+  - {fileID: 8300000, guid: 31ecf71b782c2c54db8daf5024e9e8bd, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -49,5 +57,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 181420}
+  m_RootGameObject: {fileID: 155728}
   m_IsPrefabParent: 1
