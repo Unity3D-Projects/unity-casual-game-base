@@ -16,6 +16,13 @@ public class CasualLoadController : MonoBehaviour {
     }
     /**
      * Exposed method to be called via onClick events.
+     * */
+    public void backButtonPressed(){
+        //Make your on click calls here.
+        manager.loadScene (Constants.SCENES.MAIN);
+    }
+    /**
+     * Exposed method to be called via onClick events.
      * 
      * Quit is ignored in the editor or the web player. 
      * IMPORTANT: In most cases termination of application under iOS should be left at the user discretion. 
