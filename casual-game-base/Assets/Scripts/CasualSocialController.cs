@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 using CasualBase;
 
-public class SocialController : MonoBehaviour {
-    CasualSocialManager manager;
+/**
+ * Social Sharing controller, exposes the social network click events so they can be attached to the UI
+ * */
+public class CasualSocialController : MonoBehaviour {
+    private CasualSocialManager manager;
     // Use this for initialization
     void Start () {
         manager = CasualSocialManager.getInstance();

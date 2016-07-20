@@ -1,10 +1,10 @@
-﻿using System;
-using System.IO;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace CasualBase
 {
+    /**
+     * Manager class for social sharing basics.
+     * */
     public class CasualSocialManager  {
         private static CasualSocialManager self = null;
         private CasualSocialManager(){ }
@@ -15,23 +15,6 @@ namespace CasualBase
             }
             return CasualSocialManager.self;
         }
-
-//        public void TakeScreenshot(){
-//            Application.CaptureScreenshot(Constants.FILES.SCREENSHOT);
-//        }
-//        public void GetPhoto()
-//        {
-//            RawImage image;
-//            string url = Application.persistentDataPath + "/" + Constants.FILES.SCREENSHOT;
-//            byte[] bytes = File.ReadAllBytes( url );
-//            Texture2D texture = new Texture2D( 73, 73 ); // TODO: 73 ?
-//            texture.LoadImage( bytes );
-//            //                        image.texture= texture ;
-//        }
-//        
-//        public void shareScreenshot(){
-//            TakeScreenshot ();
-//        }
         
         public void ShareToTwitter(float score){
             this.ShareToTwitter(getScoreText(score));
@@ -50,9 +33,15 @@ namespace CasualBase
             return "Got a " + score + "points on " + Constants.NAME;
         }
         
+        /**
+         * Opens the URL in browser with facebook share dialog
+         * */
         public void ShareToFacebook(string description){
             this.ShareToFacebook(Constants.SOCIAL.FACEBOOK.CAPTION, Constants.SOCIAL.FACEBOOK.NAME, description, Constants.SOCIAL.FACEBOOK.PICTURE);
         }
+        /**
+         * Opens the URL in browser with twitter share dialog
+         * */
         public void ShareToFacebook(string caption, string name, string description, string picture){
             string url = Constants.SOCIAL.FACEBOOK.URL + Constants.SOCIAL.FACEBOOK.APP_ID +
                 Constants.SOCIAL.FACEBOOK.Q_APP_ID +
@@ -67,6 +56,24 @@ namespace CasualBase
             Application.OpenURL(url);
             //https://www.facebook.com/dialog/feed?%20app_id=231019603765682&%20link=http://google.com
         }
+        
+        
+        //        public void TakeScreenshot(){
+        //            Application.CaptureScreenshot(Constants.FILES.SCREENSHOT);
+        //        }
+        //        public void GetPhoto()
+        //        {
+        //            RawImage image;
+        //            string url = Application.persistentDataPath + "/" + Constants.FILES.SCREENSHOT;
+        //            byte[] bytes = File.ReadAllBytes( url );
+        //            Texture2D texture = new Texture2D( 73, 73 ); // TODO: 73 ?
+        //            texture.LoadImage( bytes );
+        //            //                        image.texture= texture ;
+        //        }
+        //        
+        //        public void shareScreenshot(){
+        //            TakeScreenshot ();
+        //        }
         
     }
 }

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using CasualBase;
 
 public class CasualBall : MonoBehaviour {
+    private CasualSoundManager soundManager;
     private static float INITIAL_GRAVITY = 0.1f;
     public static Vector2 INITIAL_SPEED = new Vector2 (100f, 100f);
     public static Vector2 INITIAL_POSITION = new Vector2(0, 0);
@@ -14,6 +15,7 @@ public class CasualBall : MonoBehaviour {
     private Transform otherTransform;
     
     void Start(){
+        soundManager = CasualSoundManager.getInstance();
         GameObject otherObject = GameObject.Find(Constants.SCENE_OBJECTS.CAMERA);
         otherTransform = otherObject.transform;
         rigidBody = gameObject.GetComponent<Rigidbody2D> ();
@@ -47,5 +49,7 @@ public class CasualBall : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D collider){
         speedUp ();
+        
+        soundManager.playSound(CasualSoundManager.SFX.JUMP);
     }
 }
