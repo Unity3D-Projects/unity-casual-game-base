@@ -15,41 +15,56 @@ namespace CasualBase
             }
             return CasualSocialManager.self;
         }
+
+//        public void TakeScreenshot(){
+//            Application.CaptureScreenshot(Constants.FILES.SCREENSHOT);
+//        }
+//        public void GetPhoto()
+//        {
+//            RawImage image;
+//            string url = Application.persistentDataPath + "/" + Constants.FILES.SCREENSHOT;
+//            byte[] bytes = File.ReadAllBytes( url );
+//            Texture2D texture = new Texture2D( 73, 73 ); // TODO: 73 ?
+//            texture.LoadImage( bytes );
+//            //                        image.texture= texture ;
+//        }
+//        
+//        public void shareScreenshot(){
+//            TakeScreenshot ();
+//        }
         
-        public void TakeScreenshot(){
-            Application.CaptureScreenshot(Constants.FILES.SCREENSHOT);
+        public void ShareToTwitter(float score){
+            this.ShareToTwitter(getScoreText(score));
         }
-        public void GetPhoto()
-        {
-            RawImage image;
-            string url = Application.persistentDataPath + "/" + Constants.FILES.SCREENSHOT;
-            byte[] bytes = File.ReadAllBytes( url );
-            Texture2D texture = new Texture2D( 73, 73 ); // TODO: 73 ?
-            texture.LoadImage( bytes );
-            //                        image.texture= texture ;
-        }
-        
-        public void shareScreenshot(){
-            TakeScreenshot ();
-        }
-        
         public void ShareToTwitter (string textToDisplay)
         {
-			Application.OpenURL(Constants.SOCIAL.TWITTER.URL +
-								Constants.SOCIAL.TWITTER.Q_TEXT + WWW.EscapeURL(textToDisplay) +
-								Constants.SOCIAL.TWITTER.Q_LANG + WWW.EscapeURL(Constants.SOCIAL.TWITTER.LANG));
+            Application.OpenURL(Constants.SOCIAL.TWITTER.URL +
+                                Constants.SOCIAL.TWITTER.Q_TEXT + WWW.EscapeURL(textToDisplay) +
+                                Constants.SOCIAL.TWITTER.Q_LANG + WWW.EscapeURL(Constants.SOCIAL.TWITTER.LANG));
         }
-		public void ShareToFacebook(){
-			Application.OpenURL(
-				Constants.SOCIAL.FACEBOOK.URL + Constants.SOCIAL.FACEBOOK.APP_ID +
-				Constants.SOCIAL.FACEBOOK.Q_APP_ID +
-				Constants.SOCIAL.FACEBOOK.Q_LINK + Constants.SOCIAL.SHARE +
-				Constants.SOCIAL.FACEBOOK.DISPLAY +
-				Constants.SOCIAL.FACEBOOK.Q_CAPTION + Constants.SOCIAL.FACEBOOK.CAPTION +
-				Constants.SOCIAL.FACEBOOK.Q_NAME + name + 
-				Constants.SOCIAL.FACEBOOK.Q_DESCRIPCION + description
-
-			);
+        
+        public void ShareToFacebook(float score){
+            this.ShareToFacebook(getScoreText(score));
+        }
+        private string getScoreText(float score){
+            return "Got a " + score + "points on " + Constants.NAME;
+        }
+        
+        public void ShareToFacebook(string description){
+            this.ShareToFacebook(Constants.SOCIAL.FACEBOOK.CAPTION, Constants.SOCIAL.FACEBOOK.NAME, description, Constants.SOCIAL.FACEBOOK.PICTURE);
+        }
+        public void ShareToFacebook(string caption, string name, string description, string picture){
+            string url = Constants.SOCIAL.FACEBOOK.URL + Constants.SOCIAL.FACEBOOK.APP_ID +
+                Constants.SOCIAL.FACEBOOK.Q_APP_ID +
+                    Constants.SOCIAL.FACEBOOK.Q_LINK + Constants.SOCIAL.SHARE +
+                    Constants.SOCIAL.FACEBOOK.DISPLAY +
+                    Constants.SOCIAL.FACEBOOK.Q_CAPTION + caption +
+                    Constants.SOCIAL.FACEBOOK.Q_NAME + name + 
+                    Constants.SOCIAL.FACEBOOK.Q_DESCRIPCION + description;
+            if(picture != null){
+                url+=  Constants.SOCIAL.FACEBOOK.Q_PICTURE + picture;
+            }
+            Application.OpenURL(url);
             //https://www.facebook.com/dialog/feed?%20app_id=231019603765682&%20link=http://google.com
         }
         

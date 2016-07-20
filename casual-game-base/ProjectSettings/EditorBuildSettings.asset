@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/CasualMain.unity
+    path: Assets/Example/_Scenes/CasualMain.unity
   - enabled: 1
-    path: Assets/_Scenes/CasualLevel_01.unity
+    path: Assets/Example/_Scenes/CasualLevel_01.unity
