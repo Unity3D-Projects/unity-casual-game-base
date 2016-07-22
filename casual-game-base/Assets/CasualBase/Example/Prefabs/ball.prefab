@@ -9,12 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 420330}
   - 212: {fileID: 21208792}
-  - 61: {fileID: 6196930}
   - 50: {fileID: 5019140}
   - 114: {fileID: 11448224}
+  - 58: {fileID: 5862826}
   m_Layer: 0
   m_Name: ball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,8 +49,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6196930
-BoxCollider2D:
+--- !u!58 &5862826
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -62,7 +62,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.22}
+  m_Radius: 0.11
 --- !u!114 &11448224
 MonoBehaviour:
   m_ObjectHideFlags: 1
