@@ -36,10 +36,10 @@ namespace CasualBase
             public static string MENU = "_CasualMenu";
             
             public static class CASUAL {
-                public static string BASE = "_CasualBase";
+				public static string SOUNDS_BUCKET = "_SoundsBucket";
                 public static string LOAD_MANAGER = "CasualLoadManager";
                 public static string SOUND_MANAGER = "_CasualSoundManager";
-                
+
                 public static string BALL = "ball";
             }
         }
